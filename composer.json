@@ -1,0 +1,18 @@
+{
+  "name": "chukShirley/NoI18N",
+  "description": "Zend MVC module for php installations with no i18n extension",
+  "license": "MIT",
+  "keywords": [
+    "i18n",
+    "zendframework"
+  ],
+  "require": {
+    "php": "^7.0",
+    "zendframework/zend-i18n": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "NoI18N\\": "src/"
+    }
+  }
+}
