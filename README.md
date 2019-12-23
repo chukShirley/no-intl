@@ -12,7 +12,7 @@ After installing the package, you'll need to add the module to your module confi
 return [
     // ... other modules
     'Zend\I18n',
-    'NoI18N',
+    'NoIntl',
 ];
 ```
 
