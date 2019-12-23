@@ -11,6 +11,8 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 final class TranslatorFactory implements FactoryInterface
 {
+    const DEFAULT_LOCALE = 'en_US_POSIX';
+
     /**
      * @param ContainerInterface $container
      * @param string $requestedName
@@ -21,8 +23,21 @@ final class TranslatorFactory implements FactoryInterface
     {
         $factory = new TranslatorServiceFactory();
         $translator = $factory($container, $requestedName, $options);
-        $locale = $container->get('config')['no_intl']['default_locale'];
+        $locale = $this->getLocale($container);
         $translator->setLocale($locale);
         return $translator;
+    }
+
+    /**
+     * @param ContainerInterface $container
+     * @return string
+     */
+    private function getLocale(ContainerInterface $container): string
+    {
+        $config = $container->get('config');
+        if (!isset($config['no_intl']['default_locale'])) {
+            return self::DEFAULT_LOCALE;
+        }
+        return $config['no_intl']['default_locale'];
     }
 }

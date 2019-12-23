@@ -29,5 +29,37 @@ final class TranslatorFactoryTest extends TestCase
         $translator = $factory->__invoke(new ServiceManager($serviceManagerConfig), '');
         $this->assertInstanceOf(Translator::class, $translator);
         $this->assertEquals($translator->getLocale(), $defaultLocale);
+
+        $defaultLocale = 'en-US';
+        $serviceManagerConfig = [
+            'factories' => [
+                'config' => function () use ($defaultLocale) {
+                    return [
+                        'no_intl' => [
+                            'default_locale' => $defaultLocale,
+                        ],
+                    ];
+                }
+            ]
+        ];
+        $translator = $factory->__invoke(new ServiceManager($serviceManagerConfig), '');
+        $this->assertInstanceOf(Translator::class, $translator);
+        $this->assertEquals($translator->getLocale(), $defaultLocale);
+    }
+
+    public function testCanCreateTranslatorWithDefaultLocale()
+    {
+        $factory = new TranslatorFactory();
+        $defaultLocale = 'en_US_POSIX';
+        $serviceManagerConfig = [
+            'factories' => [
+                'config' => function () use ($defaultLocale) {
+                    return [];
+                }
+            ]
+        ];
+        $translator = $factory->__invoke(new ServiceManager($serviceManagerConfig), '');
+        $this->assertInstanceOf(Translator::class, $translator);
+        $this->assertEquals($translator->getLocale(), $defaultLocale);
     }
 }
