@@ -1,0 +1,6 @@
+<?php
+return [
+    'no_intl' => [
+        'default_locale' => 'en_US_POSIX',
+    ],
+];

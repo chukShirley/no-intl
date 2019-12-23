@@ -1,18 +1,28 @@
 {
-  "name": "chuk-shirley/noi18n",
-  "description": "Zend MVC module for php installations with no i18n extension",
+  "name": "chuk-shirley/no-intl",
+  "description": "Zend MVC module for php installations with no internationalization extension",
   "license": "MIT",
   "keywords": [
-    "i18n",
+    "intl",
+    "internationalization",
     "zendframework"
   ],
   "require": {
     "php": "^7.0",
     "zendframework/zend-i18n": "^2.0"
   },
+  "require-dev": {
+    "zendframework/zend-servicemanager": "^3.0.0",
+    "phpunit/phpunit": "^6.5"
+  },
   "autoload": {
     "psr-4": {
-      "NoI18N\\": "src/"
+      "NoIntl\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NoIntlIntegrationTest\\": "tests/integration"
     }
   }
 }

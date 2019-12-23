@@ -1,2 +1,3 @@
 .idea/
 /vendor/
+/config/no_intl.global.php

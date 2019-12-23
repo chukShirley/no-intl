@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NoI18N;
+namespace NoIntl;
 
 use Zend\I18n\Translator\TranslatorInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;

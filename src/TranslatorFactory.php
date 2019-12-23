@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NoI18N;
+namespace NoIntl;
 
 use Interop\Container\ContainerInterface;
 use Zend\I18n\Translator\Translator;
@@ -21,7 +21,8 @@ final class TranslatorFactory implements FactoryInterface
     {
         $factory = new TranslatorServiceFactory();
         $translator = $factory($container, $requestedName, $options);
-        $translator->setLocale('en_US_POSIX');
+        $locale = $container->get('config')['no_intl']['default_locale'];
+        $translator->setLocale($locale);
         return $translator;
     }
 }
