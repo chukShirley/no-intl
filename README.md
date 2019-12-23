@@ -1,4 +1,4 @@
-# NoI18N
+# no-intl
 Zend MVC module for php installations with no i18n extension
 
 ## Installation
