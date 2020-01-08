@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace NoIntlIntegrationTest;
+namespace NoIntlIntegrationTest\Factory\View\Helper;
 
 use Interop\Container\ContainerInterface;
-use NoIntl\CurrencyFormatFactory;
+use NoIntl\Factory\View\Helper\CurrencyFormatFactory;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Zend\I18n\View\Helper\CurrencyFormat;
 
@@ -15,6 +16,7 @@ final class CurrencyFormatFactoryTest extends TestCase
 
     public function testCanOverrideCurrencyFormatIntlExtensionRequirement()
     {
+        /** @var ContainerInterface|MockObject $container */
         $container = $this->createMock(ContainerInterface::class);
         $container->expects($this->once())->method('get')->with('config')->willReturn([
             'no_intl' => [

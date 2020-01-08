@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace NoIntlIntegrationTest;
+namespace NoIntlIntegrationTest\Factory\Translator;
 
-use NoIntl\TranslatorFactory;
+use NoIntl\Factory\Translator\TranslatorFactory;
 use PHPUnit\Framework\TestCase;
 use Zend\I18n\Translator\Translator;
 use Zend\ServiceManager\ServiceManager;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NoIntl;
+namespace NoIntl\Factory\View\Helper;
 
 use Interop\Container\ContainerInterface;
 use NoIntl\View\Helper\CurrencyFormat;

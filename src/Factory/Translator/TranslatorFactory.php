@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NoIntl;
+namespace NoIntl\Factory\Translator;
 
 use Interop\Container\ContainerInterface;
 use Zend\I18n\Translator\Translator;
