@@ -11,10 +11,12 @@ use Zend\ServiceManager\ServiceManager;
 
 final class TranslatorFactoryTest extends TestCase
 {
+    const DEFAULT_LOCALE = 'en_US_POSIX';
+
     public function testCanCreateTranslatorWithManuallyOverriddenLocale()
     {
         $factory = new TranslatorFactory();
-        $defaultLocale = 'en_US_POSIX';
+        $defaultLocale = self::DEFAULT_LOCALE;
         $serviceManagerConfig = [
             'factories' => [
                 'config' => function () use ($defaultLocale) {
@@ -50,7 +52,7 @@ final class TranslatorFactoryTest extends TestCase
     public function testCanCreateTranslatorWithDefaultLocale()
     {
         $factory = new TranslatorFactory();
-        $defaultLocale = 'en_US_POSIX';
+        $defaultLocale = self::DEFAULT_LOCALE;
         $serviceManagerConfig = [
             'factories' => [
                 'config' => function () use ($defaultLocale) {
