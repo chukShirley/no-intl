@@ -23,6 +23,10 @@ final class Module implements ConfigProviderInterface
             'service_manager' => [
                 'factories' => [
                     TranslatorInterface::class => TranslatorFactory::class,
+                ],
+            ],
+            'view_helpers' => [
+                'factories' => [
                     CurrencyFormat::class => CurrencyFormatFactory::class,
                     NumberFormat::class => NumberFormatFactory::class,
                 ],
