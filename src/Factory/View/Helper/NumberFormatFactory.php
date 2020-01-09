@@ -10,6 +10,8 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 final class NumberFormatFactory implements FactoryInterface
 {
+    const DEFAULT_LOCALE = 'en_US_POSIX';
+
     /**
      * @param ContainerInterface $container
      * @param string $requestedName
